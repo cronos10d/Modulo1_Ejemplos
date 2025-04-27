@@ -1,9 +1,21 @@
+/* a. Personalizar el tema: */
+:root{
+  --color-1 : #f1d472;
+  --color-2 : #f4e08f;
+  --color-3 : #120c64;
+  --color-4 : #394ca1;
+  --color-5 : #b8a9e9;
+
+}
+
+
 /* Estilos generales */
+/* a. Personalizar el tema: */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 40;
     padding: 10px;
-    background-color: gray;
+    background-color: var(--color-1);
     
   }
 
@@ -23,8 +35,9 @@ body {
   
 
   /* Estilo de cada tarjeta */
+  /* a. Personalizar el tema: */
   .card {
-    background: #f4f4f4;
+    background: var(--color-5);
     padding: 1rem;
     border-radius: 20px;
     text-align: left;
@@ -35,4 +48,16 @@ body {
     max-width: 80%; /* Imagen fluida */
     height: auto;
     border-radius: 4px;
+  }
+
+  /* a. Personalizar el tema: */
+  .card h3{
+    color: var(--color-3);
+    padding: 20px;
+    margin: 0;
+  }
+
+  /* a. Personalizar el tema: */
+  .card p{
+    color: var(--color-4);
   }

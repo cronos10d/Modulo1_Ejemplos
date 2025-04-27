@@ -106,3 +106,28 @@ nav a:hover {
     display: block;
     margin: 10px 0;
 }
+
+
+/* e. Nuevo consumo de API: */
+.ej-api{
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.res-api {
+    margin-top: 15px;
+    padding: 15px;
+    background: #e3f2fd;
+    border-left: 4px solid #2196F3;
+}
+
+.res-api img {
+    max-width: 300px;
+    display: block;
+    margin: 10px 0;
+}
+
+

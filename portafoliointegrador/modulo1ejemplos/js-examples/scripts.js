@@ -5,6 +5,12 @@ function cuadrado(x) {
 
 function mostrarCuadrado() {
     const numero = document.getElementById('numeroCuadrado').value;
+    // d. Validación de formulario:
+    if (isNaN(numero) || numero === ''  || numero <=0) {
+        document.getElementById('resultadoCuadrado').innerHTML = 'Por favor, ingresa un número mayor a 0.';
+        return;
+    }
+
     const resultado = cuadrado(numero);
     document.getElementById('resultadoCuadrado').innerHTML = 
         `El cuadrado de ${numero} es ${resultado}`;
@@ -22,6 +28,11 @@ const potencia = function(base, exponente) {
 function mostrarPotencia() {
     const base = document.getElementById('base').value;
     const exponente = document.getElementById('exponente').value;
+    // d. Validación de formulario:
+    if (isNaN(base) || base === '' || isNaN(exponente) || exponente === '') {
+        document.getElementById('resultadoPotencia').innerHTML = 'Por favor, ingresa valores numéricos válidos.';
+        return;
+    }
     const resultado = potencia(base, exponente);
     document.getElementById('resultadoPotencia').innerHTML = 
         `${base} elevado a ${exponente} = ${resultado}`;
@@ -33,6 +44,11 @@ const dividir = (a, b) => a / b;
 function mostrarDivision() {
     const dividendo = document.getElementById('dividendo').value;
     const divisor = document.getElementById('divisor').value;
+    // d. Validación de formulario:
+    if (divisor == 0) {
+        document.getElementById('resultadoDivision').innerHTML = 'El divisor no puede ser 0, coloca un número arriba de 0.';
+        return;
+    }
     const resultado = dividir(dividendo, divisor);
     document.getElementById('resultadoDivision').innerHTML = 
         `${dividendo} ÷ ${divisor} = ${resultado.toFixed(2)}`;
@@ -77,9 +93,27 @@ function factorial(n) {
 
 function calcularFactorial() {
     const numero = document.getElementById('numeroFactorial').value;
+     // d. Validación de formulario:
+    if (isNaN(numero) || numero === '' || numero <= 0 || !Number.isInteger(parseFloat(numero))) {
+        document.getElementById('resultadoFactorial').innerHTML = 'Por favor, ingresa un número entero positivo.';
+        return;
+    }
     const resultado = factorial(numero);
     document.getElementById('resultadoFactorial').innerHTML = 
         `${numero}! = ${resultado}`;
+}
+
+// 7. Función  Cálculo de Índice de Masa Corporal  c. Extender las funciones:
+function calcularIMC(){
+    let peso = parseFloat(document.getElementById("peso").value);
+    let altura = parseFloat(document.getElementById("altura").value);
+    // d. Validación de formulario:
+    if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+        document.getElementById("resultadoIMC").textContent = "Por favor, ingresa valores válidos para el peso y la altura.";
+    return;
+    }
+    let imc = peso / (altura * altura);
+    document.getElementById("resultadoIMC").textContent = `Tu IMC es: ${imc.toFixed(2)}`;
 }
 
 // Función para cambiar secciones
@@ -90,6 +124,9 @@ function cambiarSeccion(seccionId) {
     document.getElementById(seccionId).classList.add('active');
     event.target.classList.add('active');
 }
+
+
+
 
 // Ejemplo 1: Obtener Pokémon básico (Promesas)
 function obtenerPokemon() {
@@ -170,3 +207,28 @@ async function pokemonPorNombre() {
         document.getElementById('nombrePokemonResult').innerHTML = `Error: ${error.message}`;
     }
 }
+
+// e. Nuevo consumo de API: 
+async function perroPorRaza() {
+    
+    const raza = document.getElementById('perroRaza').value.toLowerCase().replace(/\s+/g, '-');  
+    if (!raza) {
+        document.getElementById('perroNameResult').innerHTML = 'Por favor, ingresa una raza de perro.';
+        return;
+    }
+    try {   
+        const response = await fetch(`https://dog.ceo/api/breed/${raza}/images/random`);
+        if (!response.ok) throw new Error('Prueba con otro perro');
+        const data = await response.json();
+        document.getElementById('perroNameResult').innerHTML = `
+            <h3>Perro: ${raza.charAt(0).toUpperCase() + raza.slice(1)}</h3>
+            <img src="${data.message}" alt="Imagen de un perro ${raza}" class="img-perro">
+        `;
+    } catch (error) {
+        document.getElementById('perroNameResult').innerHTML = `Error: ${error.message}`;
+    }
+}
+
+
+
+
