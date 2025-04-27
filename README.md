@@ -4,6 +4,8 @@ Proyecto final
 
 #Descripción de la sección y uso: Módulo 1 – Ejemplos
 
+Este proyecto es el comprendido de lo realizado en el modulo y la resolución de los incisos del proyecto final
+
 1. clona este repositorio:
 
 https://github.com/cronos10d/Modulo1_Ejemplos.git
