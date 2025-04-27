@@ -33,6 +33,7 @@ body {
     padding: 10px;
     background-color: #e8f5e9;
     border-left: 4px solid #2d8130;
+    font-size: 1.1rem; 
 }
 
 input {
@@ -45,6 +46,7 @@ input {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    
 }
 
 /* Estilos para la  sección API */
@@ -109,6 +111,7 @@ nav a:hover {
 
 
 /* e. Nuevo consumo de API: */
+
 .ej-api{
     background: #fff;
     padding: 20px;
@@ -128,6 +131,66 @@ nav a:hover {
     max-width: 300px;
     display: block;
     margin: 10px 0;
+}
+
+
+/*Media query */
+/* g. Responsividad completa: */
+
+@media (max-width: 600px){
+    .grid{
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+
+    .boton {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .ejemplo input {
+        width: 70%;
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .resultado{
+        font-size: 17px;
+    }
+
+}
+
+/*g. Responsividad completa:*/
+@media (min-width: 601px) and (max-width: 1024px) {
+    .grid {
+    grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .boton {
+        padding: 12px;
+        font-size: 17px;
+    }
+
+    
+    .ejemplo input {
+        width: 50%;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    
+    h3 {
+        font-size: 17px;
+    }
+
+    .resultado{
+        font-size: 17px;
+    }
 }
 
 

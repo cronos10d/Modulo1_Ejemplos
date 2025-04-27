@@ -31,7 +31,7 @@ body {
   /* Media Queries avanzadas */
   /* Pantallas pequeñas */
   @media (max-width: 600px) {
-    .gallery {
+    .gallery { 
       grid-template-columns: 1fr; /* Una columna */
     }
   }
