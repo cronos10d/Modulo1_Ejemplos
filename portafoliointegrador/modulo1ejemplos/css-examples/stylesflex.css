@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Navegación con Flexbox */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #066e19e8;
+    padding: 1rem 2rem;
+    color: white;
+  }
+
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    text-decoration: underline;
+    transition: color 0.5s ease;
+}
+
+.navbar a:focus {
+  outline: 2px dashed yellow;
+  outline-offset: 4px;
+}
+
+    
+
+  /* Contenido con CSS Grid */
+  .main-content {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr; /* Dos columnas: principal y barra lateral */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+
+  .article {
+    background: #e2e2e2;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar {
+    background: #e2e2e2;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .one{
+    background: #e2e2e2;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsividad simple */
+  @media (max-width: 768px) {
+    .main-content {
+      grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+  }

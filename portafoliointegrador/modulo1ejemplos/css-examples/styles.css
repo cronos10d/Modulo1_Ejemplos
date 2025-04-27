@@ -1,0 +1,38 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 40;
+    padding: 10px;
+    background-color: gray;
+    
+  }
+
+  /* Contenedor fluido */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vw; /* Espaciado relativo */
+  }
+
+  /* Grilla de tarjetas */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  
+
+  /* Estilo de cada tarjeta */
+  .card {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: left;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Tipografía responsiva */
+  }
+
+  .card img {
+    max-width: 80%; /* Imagen fluida */
+    height: auto;
+    border-radius: 4px;
+  }
